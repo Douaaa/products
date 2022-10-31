@@ -12,3 +12,11 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('refresh', 'refresh');
 
 });
+Route::get('/', function () {
+    return view('home');
+});
+// Route::group(['middleware' => ['auth:api']], function() {
+//     Route::resource('roles', RoleController::class);
+//     Route::resource('users', UserController::class);
+//     Route::resource('products', ProductController::class);
+// });

@@ -1,0 +1,10 @@
+body{
+  text-align: right!important;
+  direction: rtl;
+}
+.horizontalMenu {
+    color: #fff;
+    font-size: 14px;
+    padding: 0;
+    float: right!important;
+  }
