@@ -5,10 +5,10 @@
       <div class="contact-info d-flex align-items-center">
         @if(Auth::check())
 
-        <a href="{{route('logout')}}"class="headerLink">تسجيل خروج</a>
+        <a href="{{url('api/logout')}}"class="headerLink">تسجيل خروج</a>
         @else
-        <a href="{{url('/ar/create_account')}}" class="headerLink">حساب جديد</a>
-        <a href="{{url('/ar/login_account')}}"class="headerLink">تسجيل دخول</a>
+        <a href="{{url('/create_account')}}" class="headerLink">حساب جديد</a>
+        <a href="{{url('/login_account')}}"class="headerLink">تسجيل دخول</a>
         @endif
       </div>
       <div class="social-links d-none d-md-flex">

@@ -21,7 +21,6 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
         $credentials = $request->only('email', 'password');
-
         $token = Auth::attempt($credentials);
         if (!$token) {
             return response()->json([
@@ -46,11 +45,18 @@ class AuthController extends Controller
         $request->validate([
             'firstName' => 'required|string|max:255',
             'lastName' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255',
             'phone' => 'required|string',
             'password' => 'required|string|min:6',
         ]);
+        $registeredUser= User::where('email', $request->email)->get();
+        if(count($registeredUser)>0){
+          return response()->json([
+              'status' => 'token',
+              'message' => 'The email has already been taken.',
 
+          ]);
+        }
         $user = User::create([
             'firstName' => $request->firstName,
             'lastName' => $request->lastName,
