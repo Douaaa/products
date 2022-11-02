@@ -45,7 +45,7 @@ margin: 15px 0;
 .back-page{
   /* padding: 80px 0; */
   /* padding: 80px 0; */
-background: linear-gradient(to bottom, rgb(14 14 14 / 52%), rgb(14 13 14 / 73%)),url(../../images/back1.jpg);
+background: linear-gradient(to bottom, rgb(14 14 14 / 52%), rgb(14 13 14 / 73%)),url(../img/bg.jpg);
 background-position: center center!important;
 background-size: cover!important;
 background-repeat: no-repeat!important;
@@ -155,7 +155,7 @@ background:#e6c600;
 
 }
 section.content{
-  margin-top:206px;
+  margin-top:203px;
 }
 /*--------------------------------------------------------------
 # Back to top button
@@ -873,22 +873,22 @@ section.content{
   margin-bottom: 30px;
 }
 .portfolio #portfolio-flters {
-  padding: 0;
-  margin: 0 0 35px 0;
+
   list-style: none;
-  text-align: center;
+  position: relative;
+  top: 26px;
 }
 .portfolio #portfolio-flters li {
   cursor: pointer;
-  margin: 0 15px 15px 0;
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 12px;
+
+  display: contents;
+
+
   line-height: 20px;
   color: #444444;
-  border-radius: 4px;
+
   text-transform: uppercase;
-  background: #fff;
+
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
 }

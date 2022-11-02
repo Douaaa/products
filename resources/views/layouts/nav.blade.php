@@ -35,7 +35,7 @@
           <li><a class="nav-link scrollto active" href="{{url('/')}}">الرئيسية</a></li>
           <!-- <li><a class="nav-link scrollto" href="#about">من نحن</a></li> -->
           <!-- <li><a class="nav-link scrollto" href="#services">الأنشطة التعليمية </a></li> -->
-          <li><a class="nav-link scrollto " href="{{url('courses')}}">الدورات التدريبية</a></li>
+          <li><a class="nav-link scrollto " href="{{url('my_products')}}">منتجاتي</a></li>
 
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>

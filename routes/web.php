@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,5 @@ use App\Http\Controllers\HomeController;
 Route::get('/',[HomeController::class,'index']);
 Route::get('/create_account', [HomeController::class,'register']);
 Route::get('/login_account', [HomeController::class,'login']);
+Route::get('/my_products', [ProductController::class,'index']);
+Route::get('/add_product', [ProductController::class,'add']);

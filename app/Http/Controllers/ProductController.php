@@ -24,8 +24,14 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::latest()->paginate(5);
-        return view('products.index',compact('products'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $pageInfo['title'] ='';
+        return view('products.index',compact('products','pageInfo'));
+    }
+    public function add()
+    {
+
+        $pageInfo['title'] ='';
+        return view('products.add',compact('pageInfo'));
     }
 
     /**
@@ -46,15 +52,35 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
-            'name' => 'required',
-            'detail' => 'required',
-        ]);
+      $request->validate([
+          'name' => 'required|string',
+          'image' => 'required',
+          'description' => 'required',
 
-        Product::create($request->all());
+      ]);
+      $dataIn = Array(
+        'name'=>$request->name,
+        'description'=>$request->description,
 
-        return redirect()->route('products.index')
-                        ->with('success','Product created successfully.');
+      );
+      $file= $request->file('image');
+      if($request->hasFile('image')){
+      $request->file('image')->store('/images');
+      $name = "product-" . rand(0, 1000000) . '.' . $file->getClientOriginalExtension();
+      $path = '/images/'. $name;
+      $file->move(public_path() . '/images/', $name);
+      chmod(public_path() . '/images/'. $name , '775');
+      $dataIn['image']=$name;
+    }
+      $product = Product::create($dataIn);
+
+
+      return response()->json([
+          'status' => 'success',
+          'message' => 'Product created successfully',
+          'user' => $product,
+
+      ]);
     }
 
     /**

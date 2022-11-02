@@ -38,7 +38,7 @@
     <link href="{{ asset('assets/vendor/fontawesome/css/all.min.css')}}" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    
+
     <link href="{{ asset('assets/css/style.css')}}" rel="stylesheet">
     <link href="{{ asset('assets/css/skin-modes.css')}}" rel="stylesheet" />
 
